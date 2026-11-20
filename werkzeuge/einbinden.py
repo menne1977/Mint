@@ -7,6 +7,8 @@ reihenfolge = {'bio': 0, 'phy': 1, 'che': 2, 'erd': 3}
 
 def schluessel(p):
     m = re.search(r'kapitel-([a-z]+)(\d+)\.js$', p)
+    if not m:
+        return (99, p)
     return (int(m.group(2)), reihenfolge.get(m.group(1), 9))
 
 dateien = sorted(glob.glob('daten/kapitel-*.js'), key=schluessel)

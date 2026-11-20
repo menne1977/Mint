@@ -159,11 +159,44 @@
 
   // ---------- Suche ----------
   function suche(root) {
-    root.innerHTML = '<input type="search" id="q" placeholder="Thema suchen, z. B. Herz, Licht, Säure" autofocus><div id="erg" style="margin-top:12px"></div>';
-    var q = root.querySelector('#q'), erg = root.querySelector('#erg');
+    root.innerHTML = '<input type="search" id="q" placeholder="Thema suchen, z. B. Herz, Licht, Säure" autofocus><div id="erg" style="margin-top:12px"></div><div id="onl" style="margin-top:16px"></div>';
+    var q = root.querySelector('#q'), erg = root.querySelector('#erg'), onl = root.querySelector('#onl');
+    // Online nachschlagen: kindgerechtes Lexikon (Klexikon) und Wikipedia, nur mit Internet
+    function strip(h) { var d = document.createElement('div'); d.innerHTML = h; return d.textContent || ''; }
+    function quelle(name, basis, begriff) {
+      var url = basis + '/w/api.php?action=query&list=search&srlimit=5&format=json&origin=*&srsearch=' + encodeURIComponent(begriff);
+      return fetch(url).then(function (r) { return r.json(); }).then(function (j) {
+        return ((j.query && j.query.search) || []).map(function (x) {
+          return { name: name, titel: x.title, text: strip(x.snippet), link: basis + '/wiki/' + encodeURIComponent(x.title.replace(/ /g, '_')) };
+        });
+      });
+    }
+    function onlineSuche(begriff) {
+      onl.innerHTML = '<p>Suche im Internet …</p>';
+      Promise.all([
+        quelle('Klexikon (für Kinder)', 'https://klexikon.zum.de', begriff).catch(function () { return null; }),
+        quelle('Wikipedia', 'https://de.wikipedia.org', begriff).catch(function () { return null; })
+      ]).then(function (res) {
+        if (res[0] === null && res[1] === null) { onl.innerHTML = '<p>Kein Internet gefunden. Die Bücher in der App gehen auch ohne Internet.</p>'; return; }
+        onl.innerHTML = '';
+        res.forEach(function (liste) {
+          (liste || []).forEach(function (x) {
+            var a = document.createElement('a'); a.className = 'karte'; a.href = x.link; a.target = '_blank'; a.rel = 'noopener';
+            a.style.display = 'block'; a.style.marginBottom = '8px'; a.style.textDecoration = 'none'; a.style.color = 'inherit';
+            a.innerHTML = '<b>' + esc(x.titel) + '</b><br><small>' + esc(x.name) + '</small><br><small>' + esc(x.text) + ' …</small>';
+            onl.appendChild(a);
+          });
+        });
+        if (!onl.children.length) onl.innerHTML = '<p>Nichts gefunden. Versuche ein anderes Wort.</p>';
+      });
+    }
     q.oninput = function () {
-      var s = q.value.trim().toLowerCase(); erg.innerHTML = '';
+      var s = q.value.trim().toLowerCase(); erg.innerHTML = ''; onl.innerHTML = '';
       if (s.length < 2) return;
+      var ob = document.createElement('button'); ob.className = 'karte'; ob.style.borderLeftColor = '#1a73e8';
+      ob.innerHTML = '🌐 <b>Im Internet nachschlagen</b><br><small>Klexikon und Wikipedia, braucht Internet</small>';
+      ob.onclick = function () { onlineSuche(q.value.trim()); };
+      onl.appendChild(ob);
       Object.keys(window.BUECHER).forEach(function (key) {
         var b = window.BUECHER[key];
         Object.keys(b.klassen).forEach(function (k) {

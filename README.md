@@ -22,3 +22,8 @@ In GitHub unter Settings → Pages den Branch `main` wählen. Danach ist das Buc
 ## Als APK (Android)
 
 Bei jedem Push baut GitHub Actions automatisch eine APK. Unter **Actions → letzter Lauf → Artifacts → Mint-Schulbuch-APK** herunterladen, entpacken und auf dem Handy installieren (Installation aus unbekannten Quellen erlauben).
+
+## Neu: Lehrplan-Ergänzungen und Online-Suche
+
+- 27 zusätzliche Kapitel nach den Themenfeldern des Kernlehrplans NRW (z. B. Pilze, Viren, Mondphasen, Flaschenzug, Nachweisreaktionen, Treibhauseffekt), alle mit eigenen Texten, Übungen und Zeichnungen (`daten/kapitel-ergaenzung-*.js`, `daten/zeichnungen-ergaenzung.js`).
+- In der Suche gibt es den Knopf „Im Internet nachschlagen“. Er fragt das Klexikon (Kinderlexikon) und Wikipedia ab und öffnet die Seite im Browser. Ohne Internet erscheint ein Hinweis, die Bücher funktionieren weiter offline.

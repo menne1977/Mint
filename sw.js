@@ -1,5 +1,5 @@
 // Service Worker: legt alle Dateien beim ersten Besuch ab, danach geht alles offline.
-var NAME = 'schulbuch-v15';
+var NAME = 'schulbuch-v16';
 var DATEIEN = [
   './',
   'index.html',
@@ -13,6 +13,7 @@ var DATEIEN = [
   'daten/zeichnungen-bio-b.js',
   'daten/zeichnungen-che.js',
   'daten/zeichnungen-erd.js',
+  'daten/zeichnungen-ergaenzung.js',
   'daten/zeichnungen-phy.js',
   'daten/kapitel-bio5.js',
   'daten/kapitel-phy5.js',
@@ -50,6 +51,9 @@ var DATEIEN = [
   'daten/kapitel-phy13.js',
   'daten/kapitel-che13.js',
   'daten/kapitel-erd13.js',
+  'daten/kapitel-ergaenzung-bio.js',
+  'daten/kapitel-ergaenzung-che.js',
+  'daten/kapitel-ergaenzung-phy.js',
   'icons/icon.svg',
   'icons/icon-192.png',
   'icons/icon-512.png'
@@ -65,6 +69,7 @@ self.addEventListener('activate', function (e) {
   self.clients.claim();
 });
 self.addEventListener('fetch', function (e) {
+  if (new URL(e.request.url).origin !== self.location.origin) return; // Online-Suche nie zwischenspeichern
   e.respondWith(caches.match(e.request).then(function (r) {
     return r || fetch(e.request).then(function (res) {
       var kopie = res.clone();

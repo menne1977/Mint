@@ -25,5 +25,5 @@ Bei jedem Push baut GitHub Actions automatisch eine APK. Unter **Actions → let
 
 ## Neu: Lehrplan-Ergänzungen und Online-Suche
 
-- 27 zusätzliche Kapitel nach den Themenfeldern des Kernlehrplans NRW (z. B. Pilze, Viren, Mondphasen, Flaschenzug, Nachweisreaktionen, Treibhauseffekt), alle mit eigenen Texten, Übungen und Zeichnungen (`daten/kapitel-ergaenzung-*.js`, `daten/zeichnungen-ergaenzung.js`).
+- 53 zusätzliche Kapitel (27 nach den Themenfeldern des Kernlehrplans NRW , 26 nach dem Inhaltsverzeichnis von „Erlebnis Bio NRW“ Band 1: z. B. Pilze, Viren, Mondphasen, Kartoffel, Hecke, Winterschlaf, Auge, Erste Hilfe), alle mit eigenen Texten, Übungen und Zeichnungen (`daten/kapitel-ergaenzung-*.js`, `daten/zeichnungen-ergaenzung.js`).
 - In der Suche gibt es den Knopf „Im Internet nachschlagen“. Er fragt das Klexikon (Kinderlexikon) und Wikipedia ab und öffnet die Seite im Browser. Ohne Internet erscheint ein Hinweis, die Bücher funktionieren weiter offline.

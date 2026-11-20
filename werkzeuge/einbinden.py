@@ -10,7 +10,8 @@ def schluessel(p):
     return (int(m.group(2)), reihenfolge.get(m.group(1), 9))
 
 dateien = sorted(glob.glob('daten/kapitel-*.js'), key=schluessel)
-alle = ['daten/inhaltsverzeichnis.js', 'daten/helfer.js'] + dateien
+zeich = ['daten/zeichnungen.js'] + sorted(glob.glob('daten/zeichnungen-*.js'))
+alle = ['daten/inhaltsverzeichnis.js', 'daten/helfer.js'] + zeich + dateien
 
 html = open('index.html', encoding='utf-8').read()
 tags = '\n'.join('<script src="%s"></script>' % d for d in alle)

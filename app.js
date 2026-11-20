@@ -92,7 +92,7 @@
       ['einfach', 'Einfach'], ['ausfuehrlich', 'Ausführlich'], ['folien', 'Folien'], ['uebungen', 'Übungen']
     ];
     root.innerHTML = '<h2>' + esc(kap.titel) + '</h2>' +
-      (d.bild ? '<figure class="bild">' + d.bild + (d.bildtext ? '<figcaption>' + esc(d.bildtext) + '</figcaption>' : '') + '</figure>' : '') +
+      ((window.ZEICHNUNGEN && window.ZEICHNUNGEN[kap.id]) || d.bild ? '<figure class="bild">' + ((window.ZEICHNUNGEN && window.ZEICHNUNGEN[kap.id]) || d.bild) + (d.bildtext ? '<figcaption>' + esc(d.bildtext) + '</figcaption>' : '') + '</figure>' : '') +
       '<div class="reiter"></div><div id="tab"></div>';
     var rt = root.querySelector('.reiter'), tab = root.querySelector('#tab');
     tabs.forEach(function (t) {

@@ -1,9 +1,24 @@
 // Service Worker: legt alle Dateien beim ersten Besuch ab, danach geht alles offline.
-var NAME = 'schulbuch-v2';
+var NAME = 'schulbuch-v3';
 var DATEIEN = [
-  './', 'index.html', 'style.css', 'app.js', 'manifest.json',
-  'daten/inhaltsverzeichnis.js', 'daten/kapitel-bio5.js', 'daten/kapitel-phy5.js', 'daten/kapitel-che5.js', 'daten/kapitel-erd5.js',
-  'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png'
+  './',
+  'index.html',
+  'style.css',
+  'app.js',
+  'manifest.json',
+  'daten/inhaltsverzeichnis.js',
+  'daten/helfer.js',
+  'daten/kapitel-bio5.js',
+  'daten/kapitel-phy5.js',
+  'daten/kapitel-che5.js',
+  'daten/kapitel-erd5.js',
+  'daten/kapitel-bio6.js',
+  'daten/kapitel-phy6.js',
+  'daten/kapitel-che6.js',
+  'daten/kapitel-erd6.js',
+  'icons/icon.svg',
+  'icons/icon-192.png',
+  'icons/icon-512.png'
 ];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(NAME).then(function (c) { return c.addAll(DATEIEN); }));

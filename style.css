@@ -14,7 +14,7 @@ main { max-width: 860px; margin: 0 auto; padding: 16px; }
 .bald { color: #8a8f8c; }
 h2 { margin: .4em 0; }
 .reiter { display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0; }
-.reiter button { flex: 1; min-width: 80px; padding: 10px; border: 0; border-radius: 10px; background: #dfe8e3; font: inherit; font-weight: 600; cursor: pointer; }
+.reiter button { flex: 1 1 0; min-width: 0; padding: 10px 4px; font-size: .9rem; border: 0; border-radius: 10px; background: #dfe8e3; font: inherit; font-weight: 600; cursor: pointer; }
 .reiter button.aktiv { background: var(--farbe); color: #fff; }
 .bild { background: #fff; border-radius: 14px; padding: 8px; margin: 10px 0; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
 .bild svg { max-width: 100%; height: auto; }

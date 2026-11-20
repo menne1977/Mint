@@ -1,0 +1,50 @@
+name: APK bauen
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Web-Dateien zusammenstellen
+        run: |
+          mkdir www
+          cp index.html app.js style.css manifest.json sw.js www/
+          cp -r daten icons www/
+
+      - name: Capacitor installieren und Android-Projekt anlegen
+        run: |
+          npm install
+          npx cap add android
+          npx cap sync android
+
+      - name: App-Icon einsetzen
+        run: |
+          for d in mdpi hdpi xhdpi xxhdpi xxxhdpi; do
+            for f in ic_launcher ic_launcher_round ic_launcher_foreground; do
+              cp icons/icon-512.png android/app/src/main/res/mipmap-$d/$f.png
+            done
+          done
+
+      - name: Debug-APK bauen
+        working-directory: android
+        run: ./gradlew assembleDebug --no-daemon
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Mint-Schulbuch-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk

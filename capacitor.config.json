@@ -1,0 +1,6 @@
+{
+  "appId": "de.menne.mint",
+  "appName": "Mint Schulbuch",
+  "webDir": "www",
+  "android": { "allowMixedContent": false }
+}

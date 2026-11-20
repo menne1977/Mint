@@ -17,3 +17,8 @@ In GitHub unter Settings → Pages den Branch `main` wählen. Danach ist das Buc
 ## Zeichnungen
 
 `daten/zeichnungen.js` enthält die Zeichenwerkzeuge, `daten/zeichnungen-bio-a.js`, `-bio-b.js`, `-phy.js`, `-che.js`, `-erd.js` die Schaubilder (SVG) für Klasse 6–13. Klasse 5 hat ihre Zeichnungen direkt in den Kapiteldateien.
+
+
+## Als APK (Android)
+
+Bei jedem Push baut GitHub Actions automatisch eine APK. Unter **Actions → letzter Lauf → Artifacts → Mint-Schulbuch-APK** herunterladen, entpacken und auf dem Handy installieren (Installation aus unbekannten Quellen erlauben).

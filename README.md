@@ -6,4 +6,4 @@ Biologie, Physik, Chemie und Erdkunde für Klasse 5 bis 13. Läuft im Browser un
 - `daten/inhaltsverzeichnis.js`: alle Kapitel der drei Bücher
 - `daten/kapitel-*.js`: die Inhalte (einfach, ausführlich, Folien, Übungen, Bild)
 
-Aktuell fertig: Klasse 5 bis 11 in allen vier Büchern. Neue Kapiteldateien mit `python3 werkzeuge/einbinden.py` einbinden und mit `node werkzeuge/pruefen.js` prüfen.
+Aktuell fertig: Klasse 5 bis 12 in allen vier Büchern. Neue Kapiteldateien mit `python3 werkzeuge/einbinden.py` einbinden und mit `node werkzeuge/pruefen.js` prüfen.

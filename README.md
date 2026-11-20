@@ -1,6 +1,6 @@
 # Schulbuch Naturwissenschaften
 
-Biologie, Physik und Chemie für Klasse 5 bis 13. Läuft im Browser und offline (installierbar als App).
+Biologie, Physik, Chemie und Erdkunde für Klasse 5 bis 13. Läuft im Browser und offline (installierbar als App).
 
 - `index.html`, `app.js`, `style.css`: die Lese-App
 - `daten/inhaltsverzeichnis.js`: alle Kapitel der drei Bücher

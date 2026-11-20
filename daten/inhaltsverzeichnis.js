@@ -50,5 +50,19 @@ window.BUECHER = {
       12: ['Organische Stoffklassen', 'Reaktionsmechanismen', 'Aromaten', 'Elektrochemie', 'Analytik'],
       13: ['Naturstoffe und Biomoleküle', 'Farbstoffe', 'Polymere', 'Technische Chemie', 'Abiturvorbereitung Chemie']
     })
+  },
+  erdkunde: {
+    name: 'Erdkunde', farbe: '#8a5a2b', symbol: '🌍',
+    klassen: mk('erd', {
+      5: ['Orientierung: Karte, Atlas und Globus', 'Himmelsrichtungen und Maßstab', 'Unsere Heimat und Deutschland', 'Landschaften in Deutschland', 'Die Kontinente und Ozeane', 'Wetter und Klima'],
+      6: ['Europa im Überblick', 'Gebirge und Tiefland', 'Landwirtschaft in Deutschland', 'Städte und Dörfer', 'Mittelmeerraum', 'Nordeuropa'],
+      7: ['Klima- und Vegetationszonen', 'Tropischer Regenwald', 'Wüsten und Savannen', 'Polargebiete', 'Afrika', 'Asien'],
+      8: ['Aufbau der Erde und Plattentektonik', 'Vulkane und Erdbeben', 'Gesteine und Bodenbildung', 'Wasserkreislauf und Flüsse', 'Nordamerika', 'Südamerika'],
+      9: ['Bevölkerung und Verstädterung', 'Entwicklungsländer und Industrieländer', 'Rohstoffe und Energie', 'Industrie und Dienstleistungen', 'Globalisierung', 'Australien und Ozeanien'],
+      10: ['Klimawandel', 'Nachhaltigkeit und Umweltschutz', 'Migration', 'Verkehr und Tourismus', 'Naturgefahren und Katastrophen', 'Deutschland und die EU'],
+      11: ['Geosphäre vertieft', 'Atmosphäre und Zirkulation', 'Klimazonen vertieft', 'Hydrosphäre und Ozeane', 'Landschaftsökologie'],
+      12: ['Stadtgeographie', 'Raumplanung', 'Weltwirtschaft und Handel', 'Ressourcenkonflikte', 'Bevölkerungsentwicklung'],
+      13: ['Globale Disparitäten', 'Nachhaltige Entwicklung', 'Geoinformation und Fernerkundung', 'Regionale Fallstudien', 'Abiturvorbereitung Erdkunde']
+    })
   }
 };

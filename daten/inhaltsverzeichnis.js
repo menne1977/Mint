@@ -1,0 +1,54 @@
+// Inhaltsverzeichnis der drei Bücher (Klasse 5 bis 13).
+// Jedes Kapitel: [id-Endung, Titel]. Die Inhalte stehen in daten/kapitel-*.js
+window.KAPITEL = window.KAPITEL || {};
+function mk(prefix, klassen) {
+  const out = {};
+  Object.keys(klassen).forEach(k => {
+    out[k] = klassen[k].map((t, i) => ({ id: prefix + k + '-' + String(i + 1).padStart(2, '0'), titel: t }));
+  });
+  return out;
+}
+window.BUECHER = {
+  biologie: {
+    name: 'Biologie', farbe: '#2e8b57', symbol: '🌱',
+    klassen: mk('bio', {
+      5: ['Was ist Biologie?', 'Arbeiten mit Lupe und Mikroskop', 'Säugetiere: Hund, Katze, Pferd', 'Haustiere und Nutztiere', 'Vögel und ihr Körperbau', 'Fische und ihr Leben im Wasser', 'Vom Ei zum Küken'],
+      6: ['Amphibien: Frosch und Co.', 'Reptilien', 'Insekten', 'Spinnen und andere Gliedertiere', 'Bau der Blütenpflanzen', 'Samen und Keimung', 'Fortpflanzung der Pflanzen', 'Lebensraum Wald', 'Lebensraum Wiese und Gewässer', 'Tiere und Pflanzen im Jahreslauf'],
+      7: ['Das Skelett', 'Muskeln und Bewegung', 'Ernährung und gesunde Kost', 'Verdauung', 'Atmung', 'Herz und Blutkreislauf', 'Die Sinnesorgane', 'Pubertät', 'Fortpflanzung und Entwicklung des Menschen'],
+      8: ['Die Zelle', 'Zellteilung', 'Fotosynthese', 'Zellatmung', 'Ökosysteme', 'Nahrungsketten und Nahrungsnetze', 'Stoffkreisläufe', 'Umwelt- und Naturschutz'],
+      9: ['Grundlagen der Vererbung', 'Mendelsche Regeln', 'Kreuzungsschemata', 'Gene und Chromosomen', 'Erbkrankheiten', 'Immunsystem', 'Krankheiten und Impfungen', 'Hormone'],
+      10: ['Evolution und Darwin', 'Entstehung der Arten', 'Stammesgeschichte', 'Verhaltensbiologie', 'Das Nervensystem', 'Gentechnik im Überblick'],
+      11: ['Zellbiologie vertieft', 'Enzyme', 'Stoffwechsel', 'Fotosynthese molekular', 'Zellatmung molekular', 'Ökologie: Populationen'],
+      12: ['Aufbau der DNA', 'Replikation', 'Proteinbiosynthese', 'Mutationen', 'Die Nervenzelle', 'Aktionspotenzial', 'Synapsen'],
+      13: ['Evolution vertieft', 'Humangenetik', 'Gentechnik und Biotechnologie', 'Ethik in der Biologie', 'Abiturvorbereitung Biologie']
+    })
+  },
+  physik: {
+    name: 'Physik', farbe: '#3b6fd4', symbol: '⚡',
+    klassen: mk('phy', {
+      5: ['Was ist Physik?', 'Messen: Länge, Masse, Zeit', 'Temperatur und Thermometer', 'Licht und Schatten', 'Schall und Hören'],
+      6: ['Wärme und Wärmeausbreitung', 'Aggregatzustände', 'Spiegel und Reflexion', 'Brechung und Linsen', 'Magnetismus', 'Einfacher Stromkreis'],
+      7: ['Kräfte und ihre Wirkung', 'Gewicht, Masse und Dichte', 'Hebel und Drehmoment', 'Einfache Maschinen', 'Druck in Flüssigkeiten und Gasen', 'Auftrieb', 'Geschwindigkeit'],
+      8: ['Elektrische Ladung', 'Stromstärke und Spannung', 'Widerstand und Ohmsches Gesetz', 'Reihen- und Parallelschaltung', 'Elektrische Leistung und Energie', 'Magnetfelder und Elektromagnet'],
+      9: ['Energie und Energieerhaltung', 'Arbeit und Leistung', 'Bewegungen und Beschleunigung', 'Newtonsche Gesetze', 'Induktion und Generator', 'Transformator'],
+      10: ['Kreisbewegung', 'Schwingungen und Wellen', 'Radioaktivität', 'Kernenergie', 'Astronomie und Sonnensystem', 'Optische Geräte'],
+      11: ['Mechanik vertieft', 'Impuls und Stöße', 'Gravitation', 'Elektrisches Feld', 'Magnetisches Feld und Lorentzkraft'],
+      12: ['Elektromagnetische Induktion', 'Schwingkreis und Wechselstrom', 'Wellenoptik', 'Interferenz und Beugung', 'Quantenphysik: Photoeffekt'],
+      13: ['Atomphysik', 'Kern- und Teilchenphysik', 'Spezielle Relativitätstheorie', 'Thermodynamik', 'Abiturvorbereitung Physik']
+    })
+  },
+  chemie: {
+    name: 'Chemie', farbe: '#c0562a', symbol: '⚗️',
+    klassen: mk('che', {
+      5: ['Was ist Chemie?', 'Sicher arbeiten im Labor', 'Stoffe und ihre Eigenschaften', 'Stoffgemische und Trennverfahren'],
+      6: ['Reinstoffe und Gemische', 'Luft und Sauerstoff', 'Wasser', 'Verbrennung', 'Aggregatzustände und Teilchenmodell'],
+      7: ['Chemische Reaktion', 'Elemente und Verbindungen', 'Atome und Atombau', 'Das Periodensystem', 'Metalle', 'Oxidation und Reduktion'],
+      8: ['Atombindung', 'Ionenbindung', 'Salze', 'Säuren und Laugen', 'Neutralisation und pH-Wert', 'Reaktionsgleichungen'],
+      9: ['Stoffmenge und Molare Masse', 'Chemisches Rechnen', 'Elektrolyse', 'Batterien und Korrosion', 'Kohlenwasserstoffe', 'Alkohole und Carbonsäuren'],
+      10: ['Chemisches Gleichgewicht', 'Reaktionsgeschwindigkeit', 'Organische Chemie', 'Kunststoffe', 'Fette, Kohlenhydrate, Eiweiße', 'Chemie im Alltag und Umwelt'],
+      11: ['Atommodelle und Orbitale', 'Bindungslehre vertieft', 'Säure-Base-Gleichgewichte', 'Redoxreaktionen vertieft', 'Energetik'],
+      12: ['Organische Stoffklassen', 'Reaktionsmechanismen', 'Aromaten', 'Elektrochemie', 'Analytik'],
+      13: ['Naturstoffe und Biomoleküle', 'Farbstoffe', 'Polymere', 'Technische Chemie', 'Abiturvorbereitung Chemie']
+    })
+  }
+};

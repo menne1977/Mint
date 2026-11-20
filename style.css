@@ -1,0 +1,37 @@
+:root { --farbe: #2e8b57; --hell: #f5f8f6; --text: #1d2b24; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 18px; line-height: 1.6; color: var(--text); background: var(--hell); }
+#kopf { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--farbe); color: #fff; }
+#kopf h1 { flex: 1; margin: 0; font-size: 1.15rem; }
+#kopf button { background: rgba(255,255,255,.2); color: #fff; border: 0; border-radius: 10px; font-size: 1.2rem; padding: 6px 12px; cursor: pointer; }
+main { max-width: 860px; margin: 0 auto; padding: 16px; }
+.raster { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.karte { display: block; width: 100%; text-align: left; background: #fff; border: 2px solid transparent; border-left: 8px solid var(--farbe); border-radius: 14px; padding: 14px; font: inherit; color: inherit; cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.karte:active { transform: scale(.98); }
+.karte .gross { font-size: 2rem; display: block; }
+.karte small { color: #5b6b63; }
+.fertig { color: #1a7f3c; font-weight: 700; }
+.bald { color: #8a8f8c; }
+h2 { margin: .4em 0; }
+.reiter { display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0; }
+.reiter button { flex: 1; min-width: 80px; padding: 10px; border: 0; border-radius: 10px; background: #dfe8e3; font: inherit; font-weight: 600; cursor: pointer; }
+.reiter button.aktiv { background: var(--farbe); color: #fff; }
+.bild { background: #fff; border-radius: 14px; padding: 8px; margin: 10px 0; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.bild svg { max-width: 100%; height: auto; }
+.bild figcaption { font-size: .85rem; color: #5b6b63; }
+.box { background: #fff; border-radius: 14px; padding: 14px 16px; margin: 12px 0; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.merke { border-left: 6px solid #e0a800; background: #fff8e1; }
+.folie { background: #fff; border: 3px solid var(--farbe); border-radius: 18px; padding: 20px; min-height: 240px; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+.folie h3 { margin-top: 0; font-size: 1.5rem; color: var(--farbe); }
+.folie .symbol { font-size: 3rem; }
+.folien-steuerung { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+.knopf { padding: 10px 18px; border: 0; border-radius: 10px; background: var(--farbe); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+.knopf:disabled { opacity: .4; }
+.frage { font-weight: 700; margin-bottom: 8px; }
+.antwort { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 12px; border: 2px solid #cfdad4; border-radius: 10px; background: #fff; font: inherit; cursor: pointer; }
+.antwort.richtig { background: #d9f2e0; border-color: #1a7f3c; }
+.antwort.falsch { background: #fde0e0; border-color: #c0392b; }
+.rueckmeldung { margin-top: 8px; padding: 10px; border-radius: 10px; background: #eef3f0; }
+input[type=search] { width: 100%; padding: 12px; font: inherit; border-radius: 10px; border: 2px solid #cfdad4; }
+table { border-collapse: collapse; width: 100%; background: #fff; }
+td, th { border: 1px solid #cfdad4; padding: 8px; text-align: left; }

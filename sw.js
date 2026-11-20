@@ -1,5 +1,5 @@
 // Service Worker: legt alle Dateien beim ersten Besuch ab, danach geht alles offline.
-var NAME = 'schulbuch-v3';
+var NAME = 'schulbuch-v4';
 var DATEIEN = [
   './',
   'index.html',
@@ -16,6 +16,10 @@ var DATEIEN = [
   'daten/kapitel-phy6.js',
   'daten/kapitel-che6.js',
   'daten/kapitel-erd6.js',
+  'daten/kapitel-bio7.js',
+  'daten/kapitel-phy7.js',
+  'daten/kapitel-che7.js',
+  'daten/kapitel-erd7.js',
   'icons/icon.svg',
   'icons/icon-192.png',
   'icons/icon-512.png'
